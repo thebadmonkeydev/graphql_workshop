@@ -1,1 +1,1 @@
-# How to be effective with GraphQL in Rails
+## How to be effective with GraphQL in Rails

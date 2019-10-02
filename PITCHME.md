@@ -1,7 +1,9 @@
-# How to be effective with GraphQL in Rails
+# Effective GraphQL on Rails
 
++++
 ## Installing graphql-ruby in a rails environment
 
+---
 ## What next?
 
 ### Production worthy schema design

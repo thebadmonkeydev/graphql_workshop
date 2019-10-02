@@ -1,7 +1,7 @@
-# Effective GraphQL on Rails
+## Effective GraphQL on Rails
 
 ---
-## Installation
+### Installation
 Ya'll can read README files
 
 ---

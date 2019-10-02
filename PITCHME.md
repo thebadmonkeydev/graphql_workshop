@@ -1,7 +1,8 @@
 # Effective GraphQL on Rails
 
 ---
-## Installing graphql-ruby in a rails environment
+## Installation
+Ya'll can read README files
 
 ---
 ## What next?

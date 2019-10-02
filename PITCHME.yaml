@@ -3,10 +3,10 @@ published: true
 theme            : template
 
 theme-background : [ "#171e27" ]
-theme-headline   : [ "Arial", "#d64292dd", "none" ]
-theme-byline     : [ "Arial", "#d64292dd", "none" ]
+theme-headline   : [ "Ubuntu", "#d64292dd", "none" ]
+theme-byline     : [ "Ubuntu", "#d64292dd", "none" ]
 
-theme-text       : [ "Arial", "white", "none" ]
+theme-text       : [ "Ubuntu", "white", "none" ]
 
 theme-links      : [ "#5289F7", "#5254F7" ]
 theme-code       : [ "Source Code Pro" ]

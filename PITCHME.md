@@ -4,31 +4,70 @@
 ### Who am I?
 
 +++
-**Michael Kelly**
-Senior Software Engineer at Calendly
+#### Me
 
 +++
-**GraphQL Lover**
-- Production GraphQL on Rails
-  - Assembled Brands
-  - Stackshare
-- Previous maintainer of the graphql-cache gem
+#### GraphQL Experience
 
 ---
-### Installation
+### Topics
+
++++
+#### Rails
+
++++
+#### GraphQL
+
++++
+#### GraphQL Concepts
 
 ---
-### What next?
+#### Setup
+
++++
+#### Repo
 
 ---
-### Production worthy schema design
+### Schema Design
+
++++
+#### Type System
+
++++
+#### Modelling Types
+
++++
+#### Schema-level Customizations
 
 ---
-### Finding a resolution
+### Field Resolution
+
++++
+#### Default Behavior
+
++++
+#### Resolver Methods
+
++++
+#### Resolver Classes
 
 ---
-### Authentication/Authorization
+### Getting Ready For Production
 
 ---
-### Caching
+### Authentication
 
+---
+### Authorization
+
+---
+### Performance
+
++++
+#### Tweaking DB Queries
+
++++
+#### Caching
+
++++
+#### Query Parsing

@@ -3,12 +3,16 @@
 ---
 ### Who am I?
 
-** Michael Kelly **
-- Senior Software Engineer at Calendly
-- GraphQL Lover
-- Production GraphQL on Rails in multiple environments
-  - AssembledBrands
-  - StackShare
++++
+**Michael Kelly**
+Senior Software Engineer at Calendly
+
++++
+**GraphQL Lover**
+- Production GraphQL on Rails
+  - Assembled Brands
+  - Stackshare
+- Previous maintainer of the graphql-cache gem
 
 ---
 ### Installation

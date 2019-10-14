@@ -1,6 +1,9 @@
 ## Effective GraphQL on Rails
 
 ---
+### Who am I?
+
+---
 ### Installation
 
 ---

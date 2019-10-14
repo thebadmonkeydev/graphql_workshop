@@ -2,10 +2,9 @@
 
 ---
 ### Installation
-Ya'll can read README files
 
 ---
-## What next?
+### What next?
 
 ---
 ### Production worthy schema design

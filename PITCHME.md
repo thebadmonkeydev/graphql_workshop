@@ -34,7 +34,7 @@
 #### Type System
 
 +++
-#### Modelling Types
+#### Fields
 
 +++
 #### Schema-level Customizations
@@ -54,17 +54,14 @@
 ---
 ### Getting Ready For Production
 
----
++++
 ### Authentication
 
----
++++
 ### Authorization
 
----
-### Performance
-
 +++
-#### Tweaking DB Queries
+#### DB Performance
 
 +++
 #### Caching

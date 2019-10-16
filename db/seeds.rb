@@ -7,33 +7,48 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Create Schools
-central = School.create!(
-  name: 'Central High School'
-)
+3.times do
+  school = School.create!(
+    name: FFaker::Education.school_generic_name
+  )
 
-# Create Teachers
-teacher = Teacher.create!(
-  first_name: 'Michael',
-  last_name: 'Kelly',
-  school: central
-)
+  # Create Teachers
+  5.times do
+    teacher = Teacher.create!(
+      first_name: FFaker::Name.first_name,
+      last_name: FFaker::Name.last_name,
+      school: school
+    )
 
-# Create teacher accounts
-Account.create!(
-  email: 'mkelly@example.com',
-  user: teacher
-)
+    # Create teacher account
+    Account.create!(
+      email: FFaker::Internet.safe_email,
+      user: teacher
+    )
 
-# Create Parents
-parent = Parent.create!(
-  first_name: 'Danielle',
-  last_name: 'Sullivan'
-)
+    # Create Parents
+    25.times do
+      parent = Parent.create!(
+        first_name: FFaker::Name.first_name,
+        last_name: FFaker::Name.last_name
+      )
 
-# Create parent accounts
-Account.create!(
-  email: 'dannie22@example.com',
-  user: parent
-)
+      student = Student.create!(
+        first_name: FFaker::Name.first_name,
+        last_name: parent.last_name,
+        teacher: teacher
+      )
 
-# Create Students
+      StudentParent.create!(
+        student: student,
+        parent: parent
+      )
+
+      # Create parent accounts
+      Account.create!(
+        email: FFaker::Internet.safe_email,
+        user: parent
+      )
+    end
+  end
+end

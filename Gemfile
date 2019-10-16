@@ -14,6 +14,8 @@ group :development, :test do
 end
 
 group :development do
+  gem 'ffaker'
+  gem 'rails-erd'
   gem 'annotate'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'

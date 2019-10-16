@@ -29,6 +29,7 @@
 - All requests are POST requests
   - In RESTful terms we're "creating a query"
 - Client-focused
+  - Who is consuming this API?
 - Introspective
 
 +++
@@ -54,6 +55,9 @@
 
 +++
 #### Fields
+
++++
+#### Mutations
 
 +++
 #### Schema-level Customizations

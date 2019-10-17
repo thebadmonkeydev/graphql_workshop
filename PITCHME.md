@@ -13,23 +13,23 @@
 ### Topics
 
 - GraphQL Concepts
-- Setup the app skeleton
-  - Create a schema
-  - Use GraphiQL to make some queries
-- Schema Design
-- Resolvers and testing
-- Production Readiness and Deployment
+- Build a Rails API using graphql-ruby
+  - Schema Design
+  - Resolvers and testing
+  - Production Readiness and Deployment
 
 ---
 #### GraphQL Concepts
 
+A brief discussion of the core concepts in the GraphQL standard
+
 +++
 #### API
 
-- All requests are POST requests
-  - In RESTful terms we're "creating a query"
+GraphQL is an API standard like JsonAPI
+- Still technically "RESTful"
+  - Every GraphQL request is a POST-ed query
 - Client-focused
-  - Who is consuming this API?
 - Introspective
 
 +++
@@ -39,7 +39,19 @@
 - Composed of Fields and Types
   - Fields have a type
   - Types are defined by their fields
-- Defines data definition as a graph
+- Defines your data definition as a graph
+
++++
+#### Fields
+
+- Two types of fields
+  - Scalar types
+  - Object types
+
++++
+#### Mutations
+
+Mutation are specialized fields that modify ("mutate") the state of our data
 
 ---
 #### Setup

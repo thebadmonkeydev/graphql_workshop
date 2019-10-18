@@ -68,9 +68,15 @@ GraphQL is an API standard like JsonAPI
   - Scalar types
   - Object types
 
++++
+### Mutations
+
+Mutation are specialized fields that modify ("mutate") the state of our data
 
 +++
 ### Making Requests
+
+Other text
 
 ```
 query {

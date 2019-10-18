@@ -1,21 +1,21 @@
-## Effective GraphQL on Rails
+# Effective GraphQL on Rails
 
 ---
-### Who am I?
+## Who am I?
 
 Michael Kelly
 
 Senior Software Engineer on the Core Squad
 
 +++
-#### GraphQL Experience
+### GraphQL Experience
 
 - AssembledBrands (NY) - Implemented a green-field production GraphQL API supporting a React client
 - Stackshare (SF) - Migrated from their existing REST API to GraphQL incrementally
 - Invited to speak at RailsConf Malaysia about implementing GraphQL in Rails
 
 ---
-### Topics
+## Topics
 
 - GraphQL Concepts
 - Build a Rails API using graphql-ruby
@@ -24,12 +24,12 @@ Senior Software Engineer on the Core Squad
   - Production Readiness and Deployment
 
 ---
-### GraphQL Concepts
+## GraphQL Concepts
 
 A brief discussion of the core concepts in the GraphQL standard
 
 +++
-#### API
+### API
 
 GraphQL is an API standard like JsonAPI
 - Still technically "RESTful"
@@ -38,14 +38,14 @@ GraphQL is an API standard like JsonAPI
 - Introspective
 
 +++
-#### Why Use GraphQL?
+### Why Use GraphQL?
 
 - Stronger API view-layer abstraction
 - Client-driven encourages coherent API design
 - non-structured REST becomes GraphQL eventually
 
 +++
-#### Schema
+### Schema
 
 - The entire API is defined by the schema
 - Composed of Fields and Types
@@ -54,37 +54,37 @@ GraphQL is an API standard like JsonAPI
 - Defines your data definition as a graph
 
 +++
-#### Fields
+### Fields
 
 - Two types of fields
   - Scalar types
   - Object types
 
 +++
-#### Mutations
+### Mutations
 
 Mutation are specialized fields that modify ("mutate") the state of our data
 
 ---
-### Break
+## Break
 
 ---
-### Let's do it in Rails
+## Let's do it in Rails
 
 +++
-#### Repo
+### Repo
 
 https://github.com/thebadmonkeydev/graphql_workshop
 
 _Setup instructions are in README.md_
 
 ---
-### Schema Design
+## Schema Design
 
 - The schema file
 
 +++
-#### Fields
+### Fields
 
 - Defining a field
   - Inline
@@ -93,18 +93,18 @@ _Setup instructions are in README.md_
 - Best practices
 
 +++
-#### Type System
+### Type System
 
 - graphql-ruby scalars
 - Defining a custom object type
 
 +++
-#### Mutations
+### Mutations
 
 Mutations are a specialized form of field that is used to modify data behind the API.  In a REASTful sense this would encompass the usual POST, PUT, and UPDATE requests.
 
 +++
-#### Schema-level Customizations
+### Schema-level Customizations
 
 - Connection edge fields like count
 - Relay Integration (Node Identification)
@@ -112,7 +112,7 @@ Mutations are a specialized form of field that is used to modify data behind the
 - Base Classes
 
 ---
-### Field Resolution
+## Field Resolution
 
 - Root object
 - Arguments, Parent Object, Context
@@ -122,22 +122,22 @@ Mutations are a specialized form of field that is used to modify data behind the
   - Resolver Classes
 
 +++
-#### Default Behavior
+### Default Behavior
 
 The field's name is used to lookup a method by that name, or resolve a hash key with a value of the field's name
 
 +++
-#### Resolver Methods
+### Resolver Methods
 
 A method with the same name as the field is looked up on the type definition, if it exists it is used to resolve the field
 
 +++
-#### Resolver Classes
+### Resolver Classes
 
 Slightly more decoupled way of defining resolver behavior
 
 ---
-### Testing
+## Testing
 
 - Best practices
   - Integration/Feature specs
@@ -145,39 +145,39 @@ Slightly more decoupled way of defining resolver behavior
 - Examples of using the graphql-ruby lib API to test directly
 
 ---
-### Getting Ready For Production
+## Getting Ready For Production
 
 +++
-### Authentication
+## Authentication
 
 Authentication is usually handled at the controller level through either a token-based API authentication protocol, or some kind of session.
 
 +++
-### Authorization
+## Authorization
 
 - Hand made
 - gems
 - GraphQL Ruby Pro
 
 +++
-#### DB Performance
+### DB Performance
 
 - n+1
 - preloading
 - selecting
 
 +++
-#### Caching
+### Caching
 
 +++
-#### Query Parsing
+### Query Parsing
 
 Just like any API, GraphQL requires that it's queries be parsed out of the web request into an intermediate form that can be used to resolve that query
 
 By default this is done in Ruby. `libgraphqlparser` is a C++ implementation of the query parser that can be used by graphql-ruby.  It is significantly faster at parsing queries than the built-in ruby parser.
 
 ---
-### Advanced Topics
+## Advanced Topics
 
 - Schema Stitching
 - SSR

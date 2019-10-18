@@ -6,8 +6,8 @@ theme            : template
 #theme-background : [ "#271e27" ]
 theme-background : [ "#fff" ]
 #theme-headline   : [ "Ubuntu", "#88bb88", "none" ]
-theme-headline   : [ "Ubuntu", "#656a72", "none" ]
-theme-byline     : [ "Ubuntu", "#88bb88", "none" ]
+theme-headline   : [ "Ubuntu", "#D64292", "none" ]
+theme-byline     : [ "Ubuntu", "#D64292", "none" ]
 
 theme-text       : [ "Ubuntu", "#ffffffdd", "none" ]
 

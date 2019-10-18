@@ -76,14 +76,12 @@ Mutation are specialized fields that modify ("mutate") the state of our data
 +++
 ### Making Requests
 
-@snap[centerpoint text-left]
 ```
 query {
   scalar_field
   object_field { object_type_field }
 }
 ```
-@snapend
 
 ---
 ## Break

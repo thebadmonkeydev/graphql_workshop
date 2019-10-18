@@ -3,15 +3,11 @@
 @snap[south-west span-30]
 ![Rails Logo](assets/images/rails.svg)
 @snapend
-
 +
-
 @snap[south span-30]
 ![GraphQL Logo](assets/images/graphql_logo.svg)
 @snapend
-
 =
-
 @snap[south-east span-30]
 ![GraphQL Ruby Logo](assets/images/graphql_ruby.png)
 @snapend

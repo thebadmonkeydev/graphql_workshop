@@ -3,7 +3,7 @@ eager-load: true
 
 theme            : template
 
-theme-background : [ "#171e27" ]
+theme-background : assets/images/background.jpg
 theme-headline   : [ "Ubuntu", "#d64292dd", "none" ]
 theme-byline     : [ "Ubuntu", "#d64292dd", "none" ]
 

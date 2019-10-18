@@ -1,5 +1,3 @@
----?image=assets/images/background.jpg
-
 ## Effective GraphQL on Rails
 
 ---

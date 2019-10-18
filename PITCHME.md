@@ -1,3 +1,5 @@
+---?image=assets/images/background.jpg
+
 ## Effective GraphQL on Rails
 
 @snap[south span-50]

@@ -3,11 +3,16 @@
 ---
 ### Who am I?
 
-+++
-#### Me
+Michael Kelly
+
+Senior Software Engineer on the Core Squad
 
 +++
 #### GraphQL Experience
+
+- AssembledBrands (NY) - Implemented a green-field production GraphQL API supporting a React client
+- Stackshare (SF) - Migrated from their existing REST API to GraphQL incrementally
+- Invited to speak at RailsConf Mylasia about implementing GraphQL in Rails
 
 ---
 ### Topics
@@ -19,7 +24,7 @@
   - Production Readiness and Deployment
 
 ---
-#### GraphQL Concepts
+### GraphQL Concepts
 
 A brief discussion of the core concepts in the GraphQL standard
 
@@ -31,6 +36,13 @@ GraphQL is an API standard like JsonAPI
   - Every GraphQL request is a POST-ed query
 - Client-focused
 - Introspective
+
++++
+#### Why Use GraphQL?
+
+- Stronger API view-layer abstraction
+- Client-driven encourages coherent API design
+- non-structured REST becomes GraphQL eventually
 
 +++
 #### Schema
@@ -54,40 +66,83 @@ GraphQL is an API standard like JsonAPI
 Mutation are specialized fields that modify ("mutate") the state of our data
 
 ---
-#### Setup
+### Break
+
+---
+### Let's do it in Rails
 
 +++
 #### Repo
 
+https://github.com/thebadmonkeydev/graphql_workshop
+
+_Setup instructions are in README.md_
+
 ---
 ### Schema Design
 
-+++
-#### Type System
+- The schema file
 
 +++
 #### Fields
 
+- Defining a field
+  - Inline
+  - Block format
+- Arguments
+- Best practices
+
++++
+#### Type System
+
+- graphql-ruby scalars
+- Defining a custom object type
+
 +++
 #### Mutations
+
+Mutations are a specialized form of field that is used to modify data behind the API.  In a REASTful sense this would encompass the usual POST, PUT, and UPDATE requests.
 
 +++
 #### Schema-level Customizations
 
+- Connection edge fields like count
+- Relay Integration (Node Identification)
+- Base Types
+- Base Classes
+
 ---
 ### Field Resolution
+
+- Root object
+- Arguments, Parent Object, Context
+- Resolution Flow
+  - Default resolution
+  - Resolver methods
+  - Resolver Classes
 
 +++
 #### Default Behavior
 
+The field's name is used to lookup a method by that name, or resolve a hash key with a value of the field's name
+
 +++
 #### Resolver Methods
+
+A method with the same name as the field is looked up on the type definition, if it exists it is used to resolve the field
 
 +++
 #### Resolver Classes
 
+Slightly more decoupled way of defining resolver behavior
+
 ---
 ### Testing
+
+- Best practices
+  - Integration/Feature specs
+  - Resolver Unit tests
+- Examples of using the graphql-ruby lib API to test directly
 
 ---
 ### Getting Ready For Production
@@ -95,14 +150,34 @@ Mutation are specialized fields that modify ("mutate") the state of our data
 +++
 ### Authentication
 
+Authentication is usually handled at the controller level through either a token-based API authentication protocol, or some kind of session.
+
 +++
 ### Authorization
 
+- Hand made
+- gems
+- GraphQL Ruby Pro
+
 +++
 #### DB Performance
+
+- n+1
+- preloading
+- selecting
 
 +++
 #### Caching
 
 +++
 #### Query Parsing
+
+Just like any API, GraphQL requires that it's queries be parsed out of the web request into an intermediate form that can be used to resolve that query
+
+By default this is done in Ruby. `libgraphqlparser` is a C++ implementation of the query parser that can be used by graphql-ruby.  It is significantly faster at parsing queries than the built-in ruby parser.
+
+---
+### Advanced Topics
+
+- Schema Stitching
+- SSR

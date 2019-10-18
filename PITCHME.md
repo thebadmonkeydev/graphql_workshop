@@ -1,4 +1,5 @@
 # Effective GraphQL on Rails
+---?image=assets/images/rails.svg
 
 ---
 ## Who am I?
@@ -95,7 +96,9 @@ _Setup instructions are in README.md_
 +++
 ### Type System
 
-- graphql-ruby scalars
+- graphql-ruby provides a solid base
+  - Scalars
+  - Connections (Relay)
 - Defining a custom object type
 
 +++

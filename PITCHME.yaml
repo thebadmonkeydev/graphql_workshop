@@ -5,9 +5,9 @@ theme            : template
 
 theme-background : [ "#171e27" ]
 #theme-background : [ "#fff" ]
-#theme-headline   : [ "Ubuntu", "#88bb88", "none" ]
-theme-headline   : [ "Ubuntu", "#D64292", "none" ]
-theme-byline     : [ "Ubuntu", "#D64292", "none" ]
+#theme-headline   : [ "Iosevka", "#88bb88", "none" ]
+theme-headline   : [ "Iosevka", "#D64292", "none" ]
+theme-byline     : [ "Iosevka", "#D64292", "none" ]
 
 theme-text       : [ "Ubuntu", "#ffffffdd", "none" ]
 

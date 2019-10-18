@@ -1,9 +1,12 @@
 ## Effective GraphQL on Rails
 
-@snap[south-west span-40]
+@snap[south-west span-33]
 ![Rails Logo](assets/images/rails.svg)
 @snapend
-@snap[south-east span-40]
+@snap[south span-33]
+![GraphQL Logo](assets/images/graphql_ruby.png)
+@snapend
+@snap[south-east span-33]
 ![GraphQL Logo](assets/images/graphql_logo.png)
 @snapend
 

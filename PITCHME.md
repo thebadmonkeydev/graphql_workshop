@@ -1,6 +1,8 @@
 ## Effective GraphQL on Rails
 
 ![Rails Logo](assets/images/rails.svg)
++
+![GraphQL Logo](assets/images/graphql_logo.svg)
 
 ---
 ## Who am I?

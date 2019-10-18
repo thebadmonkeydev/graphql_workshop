@@ -1,14 +1,15 @@
 published: true
+eager-load: true
 
-#theme            : template
+theme            : template
 
-#theme-background : [ "#171e27" ]
-#theme-headline   : [ "Ubuntu", "#d64292dd", "none" ]
-#theme-byline     : [ "Ubuntu", "#d64292dd", "none" ]
+theme-background : [ "#171e27" ]
+theme-headline   : [ "Ubuntu", "#88bb88", "none" ]
+theme-byline     : [ "Ubuntu", "#668866", "none" ]
 
-#theme-text       : [ "Ubuntu", "white", "none" ]
+theme-text       : [ "Ubuntu", "#ffffffdd", "none" ]
 
-#theme-links      : [ "#5289F7", "#5254F7" ]
-#theme-code       : [ "Source Code Pro" ]
-#theme-controls   : [ "#484848" ]
-#theme-margins    : [ "0", "15px" ]
+theme-links      : [ "#5289F7", "#5254F7" ]
+theme-code       : [ "Source Code Pro" ]
+theme-controls   : [ "#484848" ]
+theme-margins    : [ "0", "15px" ]

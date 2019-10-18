@@ -76,7 +76,7 @@ Mutation are specialized fields that modify ("mutate") the state of our data
 +++
 ### Making Requests
 
-```graphql
+```
 query {
   scalar_field
   object_field { object_type_field }

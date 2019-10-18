@@ -2,8 +2,9 @@ published: true
 eager-load: true
 
 theme            : template
+background       : assets/images/background.jpg
 
-theme-background : assets/images/background.jpg
+theme-background : [ "#171e27" ]
 theme-headline   : [ "Ubuntu", "#d64292dd", "none" ]
 theme-byline     : [ "Ubuntu", "#d64292dd", "none" ]
 

@@ -9,7 +9,7 @@ theme-background : [ "#171e27" ]
 theme-headline   : [ "Ubuntu", "#668866", "none" ]
 theme-byline     : [ "Ubuntu", "#668866", "none" ]
 
-theme-text       : [ "Ubuntu", "#668866", "none" ]
+theme-text       : [ "Ubuntu", "#ffffffdd", "none" ]
 
 theme-links      : [ "#5289F7", "#5254F7" ]
 theme-code       : [ "Source Code Pro" ]

@@ -1,4 +1,5 @@
-# Effective GraphQL on Rails
+## Effective GraphQL on Rails
+
 ---?image=assets/images/rails.svg
 
 ---

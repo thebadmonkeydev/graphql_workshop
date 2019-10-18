@@ -49,6 +49,13 @@ GraphQL is an API standard like JsonAPI
 - non-structured REST becomes GraphQL eventually
 
 +++
+### Why NOT Use GraphQL?
+
+- GraphQL is a complex tool, sometimes you need a piece of sandpaper, not a milling machine
+- Switching cost can be large for complex data graphs
+- Wide-spread client support isn't all there yet
+
++++
 ### Schema
 
 - The entire API is defined by the schema

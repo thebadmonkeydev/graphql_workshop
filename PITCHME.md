@@ -3,6 +3,8 @@
 ![Rails Logo](assets/images/rails.svg)
 +
 ![GraphQL Logo](assets/images/graphql_logo.svg)
+=
+![GraphQL Ruby Logo](assets/images/graphql_ruby.png)
 
 ---
 ## Who am I?

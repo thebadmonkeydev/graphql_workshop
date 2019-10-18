@@ -79,10 +79,12 @@ Mutation are specialized fields that modify ("mutate") the state of our data
 Fields can take arguments as a means to specify certain resolution behavior.  One common use case is for specifying how many results to return from a list or connection
 
 @snap[centerpoint text-left]
+```
 query {
   scalar_field
   object_field { object_type_field }
 }
+```
 @snapend
 
 +++

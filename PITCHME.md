@@ -94,15 +94,10 @@ The data to be returned from a request is "selected" by the client in the query 
 +++
 ### Field Arguments
 
-Fields can take arguments as a means to specify certain resolution behavior.  One common use case is for specifying how many results to return from a list or connection
-
-```json
-{
-  "query": "{
-    students(first: 3) {
-      name
-    }
-  }
+```
+query {
+  scalar_field
+  object_field { object_type_field }
 }
 ```
 

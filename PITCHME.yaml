@@ -5,9 +5,8 @@ theme            : template
 
 theme-background : [ "#171e27" ]
 #theme-background : [ "#fff" ]
-#theme-headline   : [ "Raleway", "#88bb88", "none" ]
-theme-headline   : [ "Raleway", "#D64292", "none" ]
-theme-byline     : [ "Raleway", "#D64292", "none" ]
+theme-headline   : [ "Montserrat", "#D64292", "none" ]
+theme-byline     : [ "Montserrat", "#D64292", "none" ]
 
 theme-text       : [ "Ubuntu", "#ffffffdd", "none" ]
 

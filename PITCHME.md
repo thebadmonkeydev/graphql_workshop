@@ -193,6 +193,4 @@ By default this is done in Ruby. `libgraphqlparser` is a C++ implementation of t
 - SSR
 
 ---
-@snap[centerpoint span-50]
 ## Fin
-@snapend

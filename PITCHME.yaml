@@ -5,7 +5,7 @@ theme            : template
 
 theme-background : [ "#171e27" ]
 theme-headline   : [ "Ubuntu", "#88bb88", "none" ]
-theme-byline     : [ "Ubuntu", "#668866", "none" ]
+theme-byline     : [ "Ubuntu", "#88bb88", "none" ]
 
 theme-text       : [ "Ubuntu", "#ffffffdd", "none" ]
 

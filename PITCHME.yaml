@@ -5,8 +5,7 @@ theme            : template
 #background       : assets/images/background.jpg
 
 theme-background : [ "#171e27" ]
-#theme-headline   : [ "Ubuntu", "#d64292dd", "none" ]
-theme-headline   : [ "Ubuntu", "#668866", "none" ]
+theme-headline   : [ "Ubuntu", "#88bb88", "none" ]
 theme-byline     : [ "Ubuntu", "#668866", "none" ]
 
 theme-text       : [ "Ubuntu", "#ffffffdd", "none" ]

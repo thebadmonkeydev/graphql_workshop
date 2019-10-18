@@ -80,12 +80,12 @@ Fields can take arguments as a means to specify certain resolution behavior.  On
 
 Other text
 
-```
+@box[bg-gold text-white rounded box-padding]
 query {
   scalar_field
   object_field { object_type_field }
 }
-```
+@endbox
 
 +++
 ### Mutations

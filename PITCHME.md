@@ -81,12 +81,10 @@ Fields can take arguments as a means to specify certain resolution behavior.  On
 Other text
 
 @snap[center span-50]
-```
 query {
   scalar_field
   object_field { object_type_field }
 }
-```
 @endsnap
 
 +++

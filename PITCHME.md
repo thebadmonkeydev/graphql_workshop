@@ -76,7 +76,7 @@ Mutation are specialized fields that modify ("mutate") the state of our data
 +++
 ### Field Arguments
 
-@snap[centerpoint span-50 text-left]
+@snap[centerpoint text-left]
 query {
   scalar_field
   object_field { object_type_field }

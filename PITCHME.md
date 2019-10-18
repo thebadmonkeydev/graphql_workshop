@@ -68,9 +68,15 @@ GraphQL is an API standard like JsonAPI or SOAP
 The fields defined in a GraphQL schema represent the data in our API and are broken up into 2 different types
 @snapend
 
++++
+### Mutations
+
+Mutation are specialized fields that modify ("mutate") the state of our data
 
 +++
 ### Field Arguments
+
+Other text
 
 ```
 query {

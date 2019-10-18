@@ -5,10 +5,10 @@ theme            : template
 
 theme-background : [ "#171e27" ]
 #theme-background : [ "#fff" ]
-theme-headline   : [ "Montserrat", "#D64292", "none" ]
-theme-byline     : [ "Montserrat", "#D64292", "none" ]
+theme-headline   : [ "Quicksand", "#D64292", "none" ]
+theme-byline     : [ "Quicksand", "#D64292", "none" ]
 
-theme-text       : [ "Ubuntu", "#ffffffdd", "none" ]
+theme-text       : [ "Quicksand", "#ffffffdd", "none" ]
 
 theme-links      : [ "#5289F7", "#5254F7" ]
 theme-code       : [ "Source Code Pro" ]

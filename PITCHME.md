@@ -73,6 +73,16 @@ GraphQL is an API standard like JsonAPI
 
 Mutation are specialized fields that modify ("mutate") the state of our data
 
++++
+### Making Requests
+
+```graphql
+query {
+  scalar_field
+  object_field { object_type_field }
+}
+```
+
 ---
 ## Break
 
@@ -182,9 +192,7 @@ Authentication is usually handled at the controller level through either a token
 +++
 ### Query Parsing
 
-Just like any API, GraphQL requires that it's queries be parsed out of the web request into an intermediate form that can be used to resolve that query
-
-By default this is done in Ruby. `libgraphqlparser` is a C++ implementation of the query parser that can be used by graphql-ruby.  It is significantly faster at parsing queries than the built-in ruby parser.
+By default this is done in Ruby. `libgraphqlparser` is a C implementation of the query parser that can be used by graphql-ruby.  It is significantly faster at parsing queries than the built-in ruby parser.
 
 ---
 ## Advanced Topics

@@ -85,7 +85,7 @@ query {
   scalar_field
   object_field { object_type_field }
 }
-@endsnap
+@snapend
 
 +++
 ### Mutations

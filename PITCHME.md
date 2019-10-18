@@ -76,7 +76,7 @@ Mutation are specialized fields that modify ("mutate") the state of our data
 +++
 ### Making Requests
 
-@css[h1-pink](Making Requests)
+@css[h1-pink](## Making Requests)
 
 ```
 query {

@@ -7,7 +7,7 @@
 ![GraphQL Logo](assets/images/graphql_ruby.png)
 @snapend
 @snap[south-east span-33]
-![GraphQL Logo](assets/images/graphql_logo.png)
+![GraphQL Logo](assets/images/graphql.png)
 @snapend
 
 ---

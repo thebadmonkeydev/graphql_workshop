@@ -4,7 +4,7 @@
 ![Rails Logo](assets/images/rails.svg)
 @snapend
 @snap[south-east span-40]
-![GraphQL Logo](assets/images/graphql_logo.png)
+![GraphQL Logo](assets/images/graphql.png)
 @snapend
 
 ---

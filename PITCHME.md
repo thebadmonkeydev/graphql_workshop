@@ -78,12 +78,12 @@ Mutation are specialized fields that modify ("mutate") the state of our data
 
 Other text
 
-@box[bg-gold text-white rounded box-padding]
+@box[#333 rounded](
 query {
   scalar_field
   object_field { object_type_field }
 }
-@endbox
+)
 
 +++
 ### Mutations

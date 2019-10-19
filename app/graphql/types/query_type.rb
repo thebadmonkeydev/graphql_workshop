@@ -1,22 +1,9 @@
 module Types
   class QueryType < Types::BaseObject
-    # Add root-level fields here.
-    # They will be entry points for queries on your schema.
+    field :students, StudentType.connection_type, 'Students accessible to the requesting user', null: false
 
-    field :numbers, [Integer], 'A list of ints', null: false
-    field :pi, Float, 'Delicious!', null: false
-    field :school, SchoolType, 'The last school', null: false
-
-    def numbers
-      [ 1, 2, 5 ]
-    end
-
-    def pi
-      3.1415
-    end
-
-    def school
-      School.last
+    def students
+      context[:current_user].students
     end
   end
 end

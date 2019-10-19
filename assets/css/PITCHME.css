@@ -4,11 +4,3 @@ h3,
 h4 {
   color: #D64292 !Important;
 }
-
-.reveal pre code.hljs {
-  padding: 15px;
-}
-
-.slide-background-content {
-  background-color: #171e27 !Important;
-}

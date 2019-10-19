@@ -2,6 +2,7 @@ published: true
 eager-load: true
 
 theme            : template
+theme-override   : assets/css/PITCHME.css
 highlight        : agate
 
 theme-background : [ "#171e27" ]

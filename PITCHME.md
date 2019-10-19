@@ -94,6 +94,21 @@ The data to be returned from a request is "selected" by the client in the query 
 ```
 
 +++
+### Field Arguments
+
+Fields can take arguments as a means to specify certain resolution behavior.  One common use case is for specifying how many results to return from a list or connection
+
+```json
+{
+  "query": "{
+    students(first: 3) {
+      name
+    }
+  }
+}
+```
+
++++
 ### Mutations
 
 Mutation are specialized fields that modify ("mutate") the state of our data. They take arguments from the query string and return some kind of result.
@@ -145,15 +160,23 @@ module Types
   class QueryType < Types::BaseObject
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
+
+    field :numbers, [Integer], 'A list of ints', null: false
+    field :pi, Integer, 'Delicious!'
+
+    def numbers
+      [ 1, 2, 5 ]
+    end
+
+    def pi
+      3.1415
+    end
   end
 end
 ```
+Note:
 
-- Defining a field
-  - Inline
-  - Block format
-- Arguments
-- Best practices
+Take this opportunity to query the field in GraphiQL
 
 +++
 ### Type System

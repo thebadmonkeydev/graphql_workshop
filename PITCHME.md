@@ -96,7 +96,8 @@ The data to be returned from a request is "selected" by the client in the query 
 
 Mutation are specialized fields that modify ("mutate") the state of our data. They take arguments from the query string and return some kind of result.
 
-_generally they return the updated object, but there are several approaches to this_
++++
+### Executing Mutations
 
 ```json
 {

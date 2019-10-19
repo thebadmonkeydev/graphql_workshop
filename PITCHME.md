@@ -3,26 +3,22 @@
 ---
 ## Who am I?
 
-Michael Kelly
-
-Senior Software Engineer on the Core Squad
-
 +++
+@snap[centerpoint span-100 text-07]
 ### GraphQL Experience
 
-- AssembledBrands (NY) - Implemented a green-field production GraphQL API supporting a React client
-- Stackshare (SF) - Migrated from their existing REST API to GraphQL incrementally
-- Invited to speak at RailsConf Malaysia about implementing GraphQL in Rails
+- **AssembledBrands (NY)** - Implemented a green-field production GraphQL API supporting a React client
+- **Stackshare (SF)** - Migrated from their existing REST API to GraphQL incrementally
 - Author of the graphql-cache gem
+- Invited to speak at RailsConf Malaysia about implementing GraphQL in Rails
+@snapend
 
 ---
 ## Topics
 
 - GraphQL Concepts
-- Build a Rails API using graphql-ruby
-  - Schema Design
-  - Resolvers and testing
-  - Production Readiness and Deployment
+- How they manifest in Ruby
+- Design and implement a Rails GraphQL API
 
 ---
 ## GraphQL Concepts
@@ -30,9 +26,9 @@ Senior Software Engineer on the Core Squad
 A brief discussion of the core concepts in the GraphQL standard
 
 +++
-### API
+### What is it?
 
-GraphQL is an API standard like JsonAPI
+GraphQL is an API standard like JsonAPI or SOAP
 - Still technically "RESTful"
   - Every GraphQL request is a POST-ed query
 - Client-focused
@@ -42,8 +38,12 @@ GraphQL is an API standard like JsonAPI
 ### Why Use GraphQL?
 
 - Stronger API view-layer abstraction
-- Client-driven encourages coherent API design
-- non-structured REST becomes GraphQL eventually
+- Statically typed and client-driven
+- Client-driven and type-first paradigms encourage coherent API design
+
++++
+### Controversial Opinion
+- Regular REST APIs at scale start to become something similar to GraphQL eventually
 
 +++
 ### Why NOT Use GraphQL?
@@ -62,24 +62,67 @@ GraphQL is an API standard like JsonAPI
 - Defines your data definition as a graph
 
 +++
+@snap[north span-100]
 ### Fields
 
-- Two types of fields
-  - Scalar types
-  - Object types
+The fields defined in a GraphQL schema represent the data in our API and are broken up into 2 different types
+@snapend
+
+@snap[south-west span-30]
+@box[bg-purple box-padding rounded](Scalar Types#String, ID, Integer, Float, Boolean, List)
+@snapend
+@snap[south-east span-30]
+@box[bg-purple box-padding rounded](Object Types#User, Account, Connections, Widget, etc.)
+@snapend
+
++++
+### Selecting Fields
+
+The data to be returned from a request is "selected" by the client in the query string:
+
+```json
+{
+  "query": "{
+    scalar_field
+    object_field {
+      object_type_field
+    }
+  }"
+}
+```
+
++++
+### Field Arguments
+
+Fields can take arguments as a means to specify certain resolution behavior.  One common use case is for specifying how many results to return from a list or connection
+
+```json
+{
+  "query": "{
+    students(first: 3) {
+      name
+    }
+  }
+}
+```
 
 +++
 ### Mutations
 
-Mutation are specialized fields that modify ("mutate") the state of our data
+Mutation are specialized fields that modify ("mutate") the state of our data. They take arguments from the query string and return some kind of result.
 
 +++
-### Making Requests
+### Executing Mutations
 
-```graphql
-query {
-  scalar_field
-  object_field { object_type_field }
+```json
+{
+  "query": "mutation {
+    updateUser(name: \"Michael\") {
+      id
+      name
+      email
+    }
+  }"
 }
 ```
 
@@ -89,29 +132,53 @@ query {
 ---
 ## Let's do it in Rails
 
-+++
-### Repo
-
+@snap[span-100 font-07]
 https://github.com/thebadmonkeydev/graphql_workshop
+@snapend
 
-_Setup instructions are in README.md_
+- Setup instructions are in README.md
+- Once setup, run the server with `bin/run`
+- Navigate to http://localhost:3000/graphiql
+
+Note:
+
+Take this opportunity to query the field in GraphiQL
 
 ---
-## Schema Design
+## The Schema
 
-- The schema file
+```ruby
+# app/graphql/graphql_workshop_schema.rb
+
+class GraphqlWorkshopSchema < GraphQL::Schema
+  mutation(Types::MutationType)
+  query(Types::QueryType)
+end
+```
 
 +++
 ### Fields
 
-- Defining a field
-  - Inline
-  - Block format
-- Arguments
-- Best practices
+Root level fields are defined in `app/graphql/types/query_type.rb`
 
-+++
-### Type System
+```ruby
+module Types
+  class QueryType < Types::BaseObject
+    field :numbers, [Integer], 'A list of ints', null: false
+    field :pi, Float, 'Delicious!'
+
+    def numbers
+      [ 1, 2, 5 ]
+    end
+
+    def pi
+      3.1415
+    end
+  end
+end
+```
+
+Note:
 
 - graphql-ruby provides a solid base
   - Scalars
@@ -119,50 +186,110 @@ _Setup instructions are in README.md_
 - Defining a custom object type
 
 +++
-### Mutations
+### Defining Custom Types
 
-Mutations are a specialized form of field that is used to modify data behind the API.  In a REASTful sense this would encompass the usual POST, PUT, and UPDATE requests.
+Custom object types inherit from `Types::BaseObject` which was created during the gem installation
+
+```ruby
+# app/graphql/types/school_type.rb
+
+module Types
+  class SchoolType < Types::BaseObject
+    description 'A public school in the district'
+
+    field :id, ID, 'The unique identifier for this school', null: false
+    field :name, String, 'The official name of this school', null: false
+  end
+end
+```
 
 +++
-### Schema-level Customizations
+### Referencing Custom Types
+
+```ruby
+# app/graphql/types/query_type.rb
+
+# ...
+
+field :school, SchoolType, 'The last school', null: false
+
+def school
+  School.last
+end
+```
+
++++
+### Defining Arguments
+
+Arguments for a field are defined within a block that's passed during field declaration:
+
+```ruby
+field :school, SchoolType, 'Query a specific school', null: true do
+  argument :id, ID, 'The unique identifier for a school', required: true
+end
+```
+
+---
+## Field Resolution
+
+To resolve a field in GraphQL we need 3 things:
+
+- Any arguments provided
+- The query Context
+- A parent object to resolve on
+
++++
+@snap[north span-100 text-bottom]
+### Where does graphql-ruby look?
+@snapend
+
+@snap[west span-25 font-06]
+@box[bg-purple box-padding rounded](1#Method on type)
+@snapend
+@snap[midpoint span-25 font-06]
+@box[bg-purple box-padding rounded](2#Method on `object`)
+@snapend
+@snap[east span-25 font-06]
+@box[bg-purple box-padding rounded](3#Hash Key on `object`)
+@snapend
+
++++
+### The resolver method
+
+When defining a method on the type definition, we have access to all the query information:
+
+```ruby
+# arguments defined for the field are passed as keyword arguments
+def school(id:)
+  object  # The parent object being resolved on
+  context # the Query context (acts like a hash)
+
+  School.find_by(id: id)
+end
+```
+
+---
+## Mutations
+
+Mutations are a seperate entity in graphql-ruby and are defined by inheriting from `GraphQL::Schema::Mutation`, defining arguments, result types, and a `resolve` method
+
+Note:
+
+If you look deep in graphql-ruby you'll find that a Mutation is just a subclass of a Resolver class
+
+---
+## Break
+
+---
+## Designing our Schema
+
+---
+## Schema-level Customizations
 
 - Connection edge fields like count
 - Relay Integration (Node Identification)
 - Base Types
 - Base Classes
-
----
-## Field Resolution
-
-- Root object
-- Arguments, Parent Object, Context
-- Resolution Flow
-  - Default resolution
-  - Resolver methods
-  - Resolver Classes
-
-+++
-### Default Behavior
-
-The field's name is used to lookup a method by that name, or resolve a hash key with a value of the field's name
-
-+++
-### Resolver Methods
-
-A method with the same name as the field is looked up on the type definition, if it exists it is used to resolve the field
-
-Client-centric Entrypoints
-
-Note:
-
-Describe our app
-
-- Root object as current user
-
----
-## Schema-level Customizations
-
-Slightly more decoupled way of defining resolver behavior
 
 ---
 ## Testing

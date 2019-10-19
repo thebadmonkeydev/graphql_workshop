@@ -265,13 +265,19 @@ When defining a method on the type definition, we have access to all the query i
 def school(id:)
   object  # The parent object being resolved on
   context # the Query context (acts like a hash)
+
+  School.find_by(id: id)
 end
 ```
 
 ---
 ## Mutations
 
-Mutations are a seperate entity in graphql-ruby and are defined by inheriting from `Types::MutationType`
+Mutations are a seperate entity in graphql-ruby and are defined by inheriting from `Types::MutationType`, defining arguments, result types, and a `resolve` method
+
+Note:
+
+If you look deep in graphql-ruby you'll find that a Mutation is just a subclass of a Resolver class
 
 ---
 ## Break

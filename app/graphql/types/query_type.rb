@@ -5,6 +5,7 @@ module Types
 
     field :numbers, [Integer], 'A list of ints', null: false
     field :pi, Float, 'Delicious!', null: false
+    field :school, SchoolType, 'The last school', null: false
 
     def numbers
       [ 1, 2, 5 ]
@@ -12,6 +13,10 @@ module Types
 
     def pi
       3.1415
+    end
+
+    def school
+      School.last
     end
   end
 end

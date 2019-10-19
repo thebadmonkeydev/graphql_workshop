@@ -129,11 +129,20 @@ Mutation are specialized fields that modify ("mutate") the state of our data. Th
 ```
 
 ---
+## Break
+
+---
 ## Let's do it in Rails
 
 https://github.com/thebadmonkeydev/graphql_workshop
 
-_Setup instructions are in README.md_
+- Setup instructions are in README.md
+- Once setup, run the server with `bin/run`
+- Navigate to http://localhost:3000/graphiql in a web browser
+
+Note:
+
+Take this opportunity to query the field in GraphiQL
 
 ---
 ## The Schema
@@ -168,9 +177,6 @@ module Types
   end
 end
 ```
-Note:
-
-Take this opportunity to query the field in GraphiQL
 
 +++
 ### Type System
@@ -238,9 +244,17 @@ To resolve a field in GraphQL we need 3 things:
 @snapend
 
 +++
-### Resolver Classes
+### The resolver method
 
-Slightly more decoupled way of defining resolver behavior
+When defining a method on the type definition, we have access to all the query information:
+
+```ruby
+# arguments defined for the field are passed as keyword arguments
+def school(first:)
+  object  # The parent object being resolved on
+  context # the Query context (acts like a hash)
+end
+```
 
 ---
 ## Break

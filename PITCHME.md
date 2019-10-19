@@ -237,7 +237,14 @@ end
 ---
 ## Field Resolution
 
-Where does graphql-ruby look to resolve fields?
+To resolve a field in GraphQL we need 3 pieces of information:
+
+- Field Arguments
+- Query Context
+- Parent Object to resolve on
+
++++
+### Where does graphql-ruby look?
 
 @snap[south-west span-25 font-06]
 @box[bg-pink box-padding rounded](Method on type)
@@ -248,48 +255,6 @@ Where does graphql-ruby look to resolve fields?
 @snap[south-east span-25 font-06]
 @box[bg-pink box-padding rounded](Hash Key on `object`)
 @snapend
-
-- Root object
-- Arguments, Parent Object, Context
-- Resolution Flow
-  - Default resolution
-  - Resolver methods
-  - Resolver Classes
-
-+++
-@snap[north span-100 text-bottom]
-### Where does graphql-ruby look?
-@snapend
-
-@snap[west span-25 font-06]
-@box[bg-purple box-padding rounded](1#Method on type)
-@snapend
-@snap[midpoint span-25 font-06]
-@box[bg-purple box-padding rounded](2#Method on `object`)
-@snapend
-@snap[east span-25 font-06]
-@box[bg-purple box-padding rounded](3#Hash Key on `object`)
-@snapend
-
-+++
-### The resolver method
-
-When defining a method on the type definition, we have access to all the query information:
-
-```ruby
-# arguments defined for the field are passed as keyword arguments
-def school(id:)
-  object  # The parent object being resolved on
-  context # the Query context (acts like a hash)
-
-  School.find_by(id: id)
-end
-```
-
----
-## Mutations
-
-Mutations are a seperate entity in graphql-ruby and are defined by inheriting from `GraphQL::Schema::Mutation`, defining arguments, result types, and a `resolve` method
 
 +++
 

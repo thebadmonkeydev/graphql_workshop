@@ -251,7 +251,7 @@ To resolve a field in GraphQL we need 3 pieces of information:
 @snap[west span-25 font-06]
 @box[bg-pink box-padding rounded](Method on type)
 @snapend
-@snap[centerpoint span-25 font-06]
+@snap[midpoint span-25 font-06]
 @box[bg-pink box-padding rounded](Method on `object`)
 @snapend
 @snap[east span-25 font-06]

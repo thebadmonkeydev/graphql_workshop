@@ -244,7 +244,7 @@ To resolve a field in GraphQL we need 3 things:
 - A parent object to resolve on
 
 +++
-@snap[north span-100]
+@snap[north span-100 text-bottom]
 ### Where does graphql-ruby look?
 @snapend
 

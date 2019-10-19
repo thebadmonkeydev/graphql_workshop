@@ -3,10 +3,6 @@
 ---
 ## Who am I?
 
-Michael Kelly
-
-Senior Software Engineer on the Core Squad
-
 +++
 ### GraphQL Experience
 

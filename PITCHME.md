@@ -237,7 +237,14 @@ end
 ---
 ## Field Resolution
 
-Where does graphql-ruby look to resolve fields?
+To resolve a field in GraphQL we need 3 pieces of information:
+
+- Field Arguments
+- Query Context
+- Parent Object to resolve on
+
++++
+### Where does graphql-ruby look?
 
 @snap[south-west span-25 font-06]
 @box[bg-pink box-padding rounded](Method on type)

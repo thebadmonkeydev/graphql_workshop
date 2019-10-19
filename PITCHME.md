@@ -159,7 +159,7 @@ Root level fields are defined in `app/graphql/types/query_type.rb`
 module Types
   class QueryType < Types::BaseObject
     field :numbers, [Integer], 'A list of ints', null: false
-    field :pi, Integer, 'Delicious!'
+    field :pi, Float, 'Delicious!'
 
     def numbers
       [ 1, 2, 5 ]
@@ -184,17 +184,33 @@ Take this opportunity to query the field in GraphiQL
 - Defining a custom object type
 
 +++
-### Mutations
+### Defining Custom Types
 
-Mutations are a specialized form of field that is used to modify data behind the API.  In a REASTful sense this would encompass the usual POST, PUT, and UPDATE requests.
+Custom object types inherit from `Types::BaseObject` which was created during the gem installation
+
+```ruby
+# app/graphql/types/school_type.rb
+
+module Types
+  class SchoolType < Types::BaseObject
+    description 'A public school in the district'
+
+    field :id, ID, 'The unique identifier for this school', null: false
+    field :name, String, 'The official name of this school', null: false
+  end
+end
+```
 
 +++
-### Schema-level Customizations
+### Referencing Custom Types
 
-- Connection edge fields like count
-- Relay Integration (Node Identification)
-- Base Types
-- Base Classes
+```ruby
+field :school, SchoolType, 'The last school', null: false
+
+def school
+  School.last
+end
+```
 
 ---
 ## Field Resolution
@@ -220,6 +236,20 @@ A method with the same name as the field is looked up on the type definition, if
 ### Resolver Classes
 
 Slightly more decoupled way of defining resolver behavior
+
+
+---
+## Mutations
+
+Mutations are a specialized form of field that is used to modify data behind the API.  In a REASTful sense this would encompass the usual POST, PUT, and UPDATE requests.
+
+---
+## Schema-level Customizations
+
+- Connection edge fields like count
+- Relay Integration (Node Identification)
+- Base Types
+- Base Classes
 
 ---
 ## Testing

@@ -219,7 +219,7 @@ end
 Where does graphql-ruby look to resolve fields?
 
 @snap[south-west span-25 font-06]
-@box[bg-pink box-padding rounded](Method on type instance)
+@box[bg-pink box-padding rounded](Method on type)
 @snapend
 @snap[south span-25 font-06]
 @box[bg-pink box-padding rounded](Method on `object`)

@@ -11,7 +11,6 @@
 - **Stackshare (SF)** - Migrated from their existing REST API to GraphQL incrementally
 - Invited to speak at RailsConf Malaysia about implementing GraphQL in Rails
 - Author of the graphql-cache gem
-- Invited to speak at RailsConf Malaysia about implementing GraphQL in Rails
 @snapend
 
 ---

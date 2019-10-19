@@ -3,7 +3,7 @@ module Types
     argument_class Types::BaseArgument
 
     def resolve_field(obj, args, ctx)
-      resolve(obj, args.to_h, ctx)
+      resolve(obj, args, ctx)
     end
   end
 end

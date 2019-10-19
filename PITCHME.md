@@ -132,6 +132,7 @@ Mutation are specialized fields that modify ("mutate") the state of our data. Th
 ---
 ## Let's do it in Rails
 
+@snap[midpoint span-100]
 https://github.com/thebadmonkeydev/graphql_workshop
 @snapend
 
@@ -142,6 +143,7 @@ https://github.com/thebadmonkeydev/graphql_workshop
 - Setup instructions are in README.md
 - Once setup, run the server with `bin/run`
 - Navigate to http://localhost:3000/graphiql in a web browser
+@snapend
 
 Note:
 

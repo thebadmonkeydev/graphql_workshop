@@ -72,7 +72,7 @@ The fields defined in a GraphQL schema represent the data in our API and are bro
 @box[bg-purple box-padding rounded](Scalar Types#String, ID, Integer, Float, Boolean, List)
 @snapend
 @snap[south-east span-30]
-@box[bg-gray box-padding rounded](Object Types#User, Account, Connections, Widget, etc.)
+@box[bg-purple box-padding rounded](Object Types#User, Account, Connections, Widget, etc.)
 @snapend
 
 +++

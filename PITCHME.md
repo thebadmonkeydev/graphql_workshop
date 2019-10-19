@@ -76,12 +76,14 @@ Mutation are specialized fields that modify ("mutate") the state of our data
 +++
 ### Making Requests
 
-```
-query {
-  scalar_field
-  object_field {
-    object_type_field
-  }
+```json
+{
+  "query": "query {
+    scalar_field
+    object_field {
+      object_type_field
+    }
+  }"
 }
 ```
 

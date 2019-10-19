@@ -9,8 +9,8 @@
 
 - **AssembledBrands (NY)** - Implemented a green-field production GraphQL API supporting a React client
 - **Stackshare (SF)** - Migrated from their existing REST API to GraphQL incrementally
-- Invited to speak at RailsConf Malaysia about implementing GraphQL in Rails
 - Author of the graphql-cache gem
+- Invited to speak at RailsConf Malaysia about implementing GraphQL in Rails
 @snapend
 
 ---
@@ -124,12 +124,30 @@ https://github.com/thebadmonkeydev/graphql_workshop
 _Setup instructions are in README.md_
 
 ---
-## Schema Design
+## The Schema
 
-- The schema file
+```ruby
+# app/graphql/graphql_workshop_schema.rb
+
+class GraphqlWorkshopSchema < GraphQL::Schema
+  mutation(Types::MutationType)
+  query(Types::QueryType)
+end
+```
 
 +++
 ### Fields
+
+Root level fields are defined in `app/graphql/types/query_type.rb`
+
+```ruby
+module Types
+  class QueryType < Types::BaseObject
+    # Add root-level fields here.
+    # They will be entry points for queries on your schema.
+  end
+end
+```
 
 - Defining a field
   - Inline

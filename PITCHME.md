@@ -223,15 +223,17 @@ To resolve a field in GraphQL we need 3 pieces of information:
 - Parent Object to resolve on
 
 +++
+@snap[north span-100]
 ### Where does graphql-ruby look?
+@snapend
 
-@snap[south-west span-25 font-06]
+@snap[west span-25 font-06]
 @box[bg-pink box-padding rounded](Method on type)
 @snapend
-@snap[south span-25 font-06]
+@snap[centerpoint span-25 font-06]
 @box[bg-pink box-padding rounded](Method on `object`)
 @snapend
-@snap[south-east span-25 font-06]
+@snap[east span-25 font-06]
 @box[bg-pink box-padding rounded](Hash Key on `object`)
 @snapend
 

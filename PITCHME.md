@@ -240,15 +240,15 @@ end
 Where does graphql-ruby look to resolve fields?
 
 @snap[south-west span-30]
-@box[bg-pink rounded](Method on type instance)
+@box[bg-pink box-padding rounded](Method on type instance)
 @fa[chevron-right]
 @snapend
 @snap[south span-30]
-@box[bg-pink rounded](Method on `object`)
+@box[bg-pink box-padding rounded](Method on `object`)
 @snapend
 @snap[south-east span-30]
 @fa[chevron-right]
-@box[bg-pink rounded](Hash Key on `object`)
+@box[bg-pink box-padding rounded](Hash Key on `object`)
 @snapend
 
 - Root object

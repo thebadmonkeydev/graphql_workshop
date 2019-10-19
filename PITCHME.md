@@ -68,11 +68,11 @@ GraphQL is an API standard like JsonAPI or SOAP
 The fields defined in a GraphQL schema represent the data in our API and are broken up into 2 different types
 @snapend
 
-@snap[bg-purple south-west span-30]
-@box[box-padding rounded](Scalar Types#String, ID, Integer, Float, Boolean, List)
+@snap[south-west span-30]
+@box[bg-purple box-padding rounded](Scalar Types#String, ID, Integer, Float, Boolean, List)
 @snapend
-@snap[bg-gray south-east span-30]
-@box[box-padding rounded](Object Types#User, Account, Connections, Widget, etc.)
+@snap[south-east span-30]
+@box[bg-gray box-padding rounded](Object Types#User, Account, Connections, Widget, etc.)
 @snapend
 
 +++

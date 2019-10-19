@@ -253,13 +253,6 @@ To resolve a field in GraphQL we need 3 things:
 @box[bg-purple box-padding rounded](3#Hash Key on `object`)
 @snapend
 
-- Root object
-- Arguments, Parent Object, Context
-- Resolution Flow
-  - Default resolution
-  - Resolver methods
-  - Resolver Classes
-
 +++
 ### The resolver method
 
@@ -280,34 +273,6 @@ end
 
 Mutations are a seperate entity in graphql-ruby and are defined by inheriting from `GraphQL::Schema::Mutation`, defining arguments, result types, and a `resolve` method
 
-+++
-
-```ruby
-module Mutations
-  class CreateMessage < GraphQL::Schema::Mutation
-    description 'Creates a new message about a student'
-
-    argument :student_id, ID, 'The student this message is about', required: true
-    argument :text, String, 'The content of this message', required: true
-
-    field :message, Types::MessageType, 'The newly created message', null: true
-
-    def resolve(student_id:, text:)
-      student = context[:current_user].students.find_by(id: student_id)
-      return unless student
-
-      message = Message.create!(
-        student: student,
-        sender: context[:current_user],
-        text: text
-      )
-
-      { message: message }
-    end
-  end
-end
-```
-
 Note:
 
 If you look deep in graphql-ruby you'll find that a Mutation is just a subclass of a Resolver class
@@ -321,39 +286,6 @@ If you look deep in graphql-ruby you'll find that a Mutation is just a subclass 
 Note:
 
 Move to live code on `complete-schema` branch
-
-Build schema with class
-
----
-## Break
-
----
-## Schema-level Customizations
-
-```ruby
-# arguments defined for the field are passed as keyword arguments
-def school(id:)
-  object  # The parent object being resolved on
-  context # the Query context (acts like a hash)
-
-  School.find_by(id: id)
-end
-```
-
----
-## Mutations
-
-Mutations are a seperate entity in graphql-ruby and are defined by inheriting from `Types::MutationType`, defining arguments, result types, and a `resolve` method
-
-Note:
-
-If you look deep in graphql-ruby you'll find that a Mutation is just a subclass of a Resolver class
-
----
-## Break
-
----
-## Designing our Schema
 
 ---
 ## Schema-level Customizations

@@ -26,9 +26,9 @@
 A brief discussion of the core concepts in the GraphQL standard
 
 +++
-### API
+### What is it?
 
-GraphQL is an API standard like JsonAPI
+GraphQL is an API standard like JsonAPI or SOAP
 - Still technically "RESTful"
   - Every GraphQL request is a POST-ed query
 - Client-focused
@@ -38,8 +38,12 @@ GraphQL is an API standard like JsonAPI
 ### Why Use GraphQL?
 
 - Stronger API view-layer abstraction
-- Client-driven encourages coherent API design
-- non-structured REST becomes GraphQL eventually
+- Statically typed and client-driven
+- Client-driven and type-first paradigms encourage coherent API design
+
++++
+### Controversial Opinion
+- Regular REST APIs at scale start to become something similar to GraphQL eventually
 
 +++
 ### Why NOT Use GraphQL?
@@ -60,17 +64,13 @@ GraphQL is an API standard like JsonAPI
 +++
 ### Fields
 
+The fields defined in a GraphQL schema represent the data in our API and there are 2 types:
+
+@snap[south-east span-40]
 - Two types of fields
   - Scalar types
   - Object types
-
-+++
-### Mutations
-
-Mutation are specialized fields that modify ("mutate") the state of our data
-
-+++
-### Making Requests
+@snapend
 
 ```json
 {
@@ -78,6 +78,23 @@ Mutation are specialized fields that modify ("mutate") the state of our data
     scalar_field
     object_field {
       object_type_field
+    }
+  }"
+}
+```
+
++++
+### Mutations
+
+Mutation are specialized fields that modify ("mutate") the state of our data
+
+```json
+{
+  "query": "mutation {
+    updateUser(name: \"Michael\") {
+      id
+      name
+      email
     }
   }"
 }

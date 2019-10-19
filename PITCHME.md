@@ -244,13 +244,13 @@ To resolve a field in GraphQL we need 3 things:
 @snapend
 
 @snap[west span-25 font-06]
-@box[bg-pink box-padding rounded](Method on type)
+@box[bg-purple box-padding rounded](Method on type)
 @snapend
 @snap[midpoint span-25 font-06]
-@box[bg-pink box-padding rounded](Method on `object`)
+@box[bg-purple box-padding rounded](Method on `object`)
 @snapend
 @snap[east span-25 font-06]
-@box[bg-pink box-padding rounded](Hash Key on `object`)
+@box[bg-purple box-padding rounded](Hash Key on `object`)
 @snapend
 
 +++

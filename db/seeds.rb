@@ -9,7 +9,7 @@
 # Create Schools
 3.times do
   school = School.create!(
-    name: FFaker::Education.school_generic_name
+    name: "#{FFaker::Education.school_generic_name} High School"
   )
 
   # Create Teachers

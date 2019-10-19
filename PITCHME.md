@@ -9,8 +9,8 @@
 
 - **AssembledBrands (NY)** - Implemented a green-field production GraphQL API supporting a React client
 - **Stackshare (SF)** - Migrated from their existing REST API to GraphQL incrementally
-- Invited to speak at RailsConf Malaysia about implementing GraphQL in Rails
 - Author of the graphql-cache gem
+- Invited to speak at RailsConf Malaysia about implementing GraphQL in Rails
 @snapend
 
 ---
@@ -143,6 +143,21 @@ end
 ### Fields
 
 Root level fields are defined in `app/graphql/types/query_type.rb`
+
+```ruby
+module Types
+  class QueryType < Types::BaseObject
+    # Add root-level fields here.
+    # They will be entry points for queries on your schema.
+  end
+end
+```
+
+- Defining a field
+  - Inline
+  - Block format
+- Arguments
+- Best practices
 
 ```ruby
 module Types

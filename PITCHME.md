@@ -116,25 +116,6 @@ Mutation are specialized fields that modify ("mutate") the state of our data. Th
 
 Mutation are specialized fields that modify ("mutate") the state of our data. They take arguments from the query string and return some kind of result.
 
-+++
-### Requesting a Mutation
-
-```json
-{
-  "query": "mutation {
-    updateUser(name: \"Michael\") {
-      id
-      name
-      email
-    }
-  }"
-}
-```
-
----
-## Let's do it in Rails
-
-@snap[span-100 font-07]
 https://github.com/thebadmonkeydev/graphql_workshop
 @snapend
 

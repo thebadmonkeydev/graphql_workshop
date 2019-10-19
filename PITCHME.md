@@ -112,7 +112,7 @@ Fields can take arguments as a means to specify certain resolution behavior.  On
 Mutation are specialized fields that modify ("mutate") the state of our data. They take arguments from the query string and return some kind of result.
 
 +++
-### Executing Mutations
+### Requesting a Mutation
 
 ```json
 {
@@ -125,9 +125,6 @@ Mutation are specialized fields that modify ("mutate") the state of our data. Th
   }"
 }
 ```
-
----
-## Break
 
 ---
 ## Let's do it in Rails
@@ -273,6 +270,32 @@ end
 
 Mutations are a seperate entity in graphql-ruby and are defined by inheriting from `GraphQL::Schema::Mutation`, defining arguments, result types, and a `resolve` method
 
+```ruby
+module Mutations
+  class CreateMessage < GraphQL::Schema::Mutation
+    description 'Creates a new message about a student'
+
+    argument :student_id, ID, 'The student this message is about', required: true
+    argument :text, String, 'The content of this message', required: true
+
+    field :message, Types::MessageType, 'The newly created message', null: true
+
+    def resolve(student_id:, text:)
+      student = context[:current_user].students.find_by(id: student_id)
+      return unless student
+
+      message = Message.create!(
+        student: student,
+        sender: context[:current_user],
+        text: text
+      )
+
+      { message: message }
+    end
+  end
+end
+```
+
 Note:
 
 If you look deep in graphql-ruby you'll find that a Mutation is just a subclass of a Resolver class
@@ -283,13 +306,21 @@ If you look deep in graphql-ruby you'll find that a Mutation is just a subclass 
 ---
 ## Designing our Schema
 
+Note:
+
+Move to live code on `complete-schema` branch
+
+Build schema with class
+
+---
+## Break
+
 ---
 ## Schema-level Customizations
 
+- Type inference
 - Connection edge fields like count
 - Relay Integration (Node Identification)
-- Base Types
-- Base Classes
 
 ---
 ## Testing
@@ -300,7 +331,7 @@ If you look deep in graphql-ruby you'll find that a Mutation is just a subclass 
 - Examples of using the graphql-ruby lib API to test directly
 
 ---
-## Getting Ready For Production
+## Concerns for Production
 
 +++
 ## Authentication
@@ -311,18 +342,21 @@ Authentication is usually handled at the controller level through either a token
 ## Authorization
 
 - Hand made
-- gems
+- Ruby gems
 - GraphQL Ruby Pro
 
 +++
 ### DB Performance
 
-- n+1
+- The dreadful n+1
 - preloading
 - selecting
 
 +++
 ### Caching
+
+- Manually
+- or with `graphql-cache`
 
 +++
 ### Query Parsing

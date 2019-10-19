@@ -224,9 +224,9 @@ Where does graphql-ruby look to resolve fields?
 @snapend
 @snap[south span-30]
 @box[bg-pink box-padding rounded](Method on `object`)
+@fa[chevron-right]
 @snapend
 @snap[south-east span-30]
-@fa[chevron-right]
 @box[bg-pink box-padding rounded](Hash Key on `object`)
 @snapend
 

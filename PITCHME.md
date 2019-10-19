@@ -127,6 +127,9 @@ Mutation are specialized fields that modify ("mutate") the state of our data. Th
 ```
 
 ---
+## Break
+
+---
 ## Let's do it in Rails
 
 https://github.com/thebadmonkeydev/graphql_workshop
@@ -135,6 +138,10 @@ https://github.com/thebadmonkeydev/graphql_workshop
 - Setup instructions are in README.md
 - Once setup, run the server with `bin/run`
 - Navigate to http://localhost:3000/graphiql
+
+- Setup instructions are in README.md
+- Once setup, run the server with `bin/run`
+- Navigate to http://localhost:3000/graphiql in a web browser
 
 Note:
 
@@ -173,9 +180,6 @@ module Types
   end
 end
 ```
-Note:
-
-Take this opportunity to query the field in GraphiQL
 
 ```ruby
 module Types
@@ -259,58 +263,17 @@ To resolve a field in GraphQL we need 3 things:
 @snapend
 
 +++
+### The resolver method
+
+When defining a method on the type definition, we have access to all the query information:
 
 ```ruby
-module Mutations
-  class CreateMessage < GraphQL::Schema::Mutation
-    description 'Creates a new message about a student'
-
-    argument :student_id, ID, 'The student this message is about', required: true
-    argument :text, String, 'The content of this message', required: true
-
-    field :message, Types::MessageType, 'The newly created message', null: true
-
-    def resolve(student_id:, text:)
-      student = context[:current_user].students.find_by(id: student_id)
-      return unless student
-
-      message = Message.create!(
-        student: student,
-        sender: context[:current_user],
-        text: text
-      )
-
-      { message: message }
-    end
-  end
+# arguments defined for the field are passed as keyword arguments
+def school(first:)
+  object  # The parent object being resolved on
+  context # the Query context (acts like a hash)
 end
 ```
-
-Note:
-
-If you look deep in graphql-ruby you'll find that a Mutation is just a subclass of a Resolver class
-
----
-## Break
-
----
-## Designing our Schema
-
-Note:
-
-Move to live code on `complete-schema` branch
-
-Build schema with class
-
----
-## Break
-
----
-## Schema-level Customizations
-
-- Type inference
-- Connection edge fields like count
-- Relay Integration (Node Identification)
 
 ---
 ## Break

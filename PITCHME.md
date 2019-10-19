@@ -66,11 +66,26 @@ GraphQL is an API standard like JsonAPI or SOAP
 
 The fields defined in a GraphQL schema represent the data in our API and there are 2 types:
 
-@snap[south-east span-40]
-- Two types of fields
-  - Scalar types
-  - Object types
+@snap[south-west span-40]
+**Scalar Types**
+- String
+- Integer
+- ID
+- etc.
 @snapend
+
+@snap[south-west span-40]
+**Object Types**
+- User
+- Account
+- Article
+- etc.
+@snapend
+
++++
+### Selecting Fields
+
+The data to be returned from a request is "selected" by the client in the query string:
 
 ```json
 {
@@ -86,7 +101,7 @@ The fields defined in a GraphQL schema represent the data in our API and there a
 +++
 ### Mutations
 
-Mutation are specialized fields that modify ("mutate") the state of our data
+Mutation are specialized fields that modify ("mutate") the state of our data, generally they return the updated object, but there are several approaches to this.
 
 ```json
 {

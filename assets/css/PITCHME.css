@@ -5,7 +5,7 @@ h4 {
   color: #D64292 !Important;
 }
 
-code.hljs {
+.reveal pre code.hljs {
   padding: 15px;
 }
 

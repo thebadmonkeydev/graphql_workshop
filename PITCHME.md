@@ -138,7 +138,7 @@ https://github.com/thebadmonkeydev/graphql_workshop
 
 - Setup instructions are in README.md
 - Once setup, run the server with `bin/run`
-- Navigate to http://localhost:3000/graphiql in a web browser
+- Navigate to http://localhost:3000/graphiql
 
 Note:
 
@@ -160,23 +160,6 @@ end
 ### Fields
 
 Root level fields are defined in `app/graphql/types/query_type.rb`
-
-```ruby
-module Types
-  class QueryType < Types::BaseObject
-    field :numbers, [Integer], 'A list of ints', null: false
-    field :pi, Float, 'Delicious!'
-
-    def numbers
-      [ 1, 2, 5 ]
-    end
-
-    def pi
-      3.1415
-    end
-  end
-end
-```
 
 ```ruby
 module Types
@@ -232,6 +215,17 @@ field :school, SchoolType, 'The last school', null: false
 
 def school
   School.last
+end
+```
+
++++
+### Defining Arguments
+
+Arguments for a field are defined within a block that's passed during field declaration:
+
+```ruby
+field :school, SchoolType, 'Query a specific school', null: true do
+  argument :id, ID, 'The unique identifier for a school', required: true
 end
 ```
 
@@ -338,19 +332,22 @@ Build schema with class
 
 ```ruby
 # arguments defined for the field are passed as keyword arguments
-def school(first:)
+def school(id:)
   object  # The parent object being resolved on
   context # the Query context (acts like a hash)
 end
 ```
 
 ---
+## Mutations
+
+Mutations are a seperate entity in graphql-ruby and are defined by inheriting from `Types::MutationType`
+
+---
 ## Break
 
 ---
-## Mutations
-
-Mutations are a specialized form of field that is used to modify data behind the API.  In a REASTful sense this would encompass the usual POST, PUT, and UPDATE requests.
+## Designing our Schema
 
 ---
 ## Schema-level Customizations

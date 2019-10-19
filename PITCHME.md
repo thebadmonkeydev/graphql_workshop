@@ -151,8 +151,16 @@ The field's name is used to lookup a method by that name, or resolve a hash key 
 
 A method with the same name as the field is looked up on the type definition, if it exists it is used to resolve the field
 
-+++
-### Resolver Classes
+Client-centric Entrypoints
+
+Note:
+
+Describe our app
+
+- Root object as current user
+
+---
+## Schema-level Customizations
 
 Slightly more decoupled way of defining resolver behavior
 

@@ -117,9 +117,6 @@ Mutation are specialized fields that modify ("mutate") the state of our data. Th
 ---
 ## Let's do it in Rails
 
-+++
-### Repo
-
 https://github.com/thebadmonkeydev/graphql_workshop
 
 _Setup instructions are in README.md_

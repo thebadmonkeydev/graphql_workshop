@@ -33,6 +33,6 @@ Make sure you have PostgresQL running locally (either by having it installed nat
 bin/rails db:setup
 ```
 
-This will create the database, migrate the table structure, and fill it with seed data.  The app comes setup with an existing set of models and data that we'll use through the workshop.  Each model has it's database columns in comments at the top it's file (using the [annotations](https://github.com/brentgreeff/annotate) gem) to make understanding this data model a bit easier.
+This will create the database, migrate the table structure, and fill it with seed data.  The app comes setup with an existing set of models and data that we'll use through the workshop.  Each model has it's database columns in comments at the top it's file (using the [annotations](https://github.com/brentgreeff/annotate) gem) to make understanding this data model a bit easier. There is also an Entity Relationship Diagram in the root of the project `erd.pdf`.
 
 The graphql_workshop application is a Rails API providing functionality for a hypothetical frontend client that allows school teachers and parents to exchange messages about students.

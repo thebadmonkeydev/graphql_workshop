@@ -126,10 +126,8 @@ Mutation are specialized fields that modify ("mutate") the state of our data. Th
 }
 ```
 
-+++
-### Mutations
-
-Mutation are specialized fields that modify ("mutate") the state of our data. They take arguments from the query string and return some kind of result.
+---
+## Let's do it in Rails
 
 https://github.com/thebadmonkeydev/graphql_workshop
 @snapend
@@ -225,6 +223,10 @@ end
 ### Referencing Custom Types
 
 ```ruby
+# app/graphql/types/query_type.rb
+
+# ...
+
 field :school, SchoolType, 'The last school', null: false
 
 def school
@@ -235,11 +237,19 @@ end
 ---
 ## Field Resolution
 
-To resolve a field in GraphQL we need 3 things:
+Where does graphql-ruby look to resolve fields?
 
-- Any arguments provided
-- The query Context
-- A parent object to resolve on
+@box[bg-pink rounded](Method on type instance)
+@fa[chevron-right]
+@box[bg-pink rounded](Method on `object`)
+@box[bg-pink rounded](Hash Key on `object`)
+
+- Root object
+- Arguments, Parent Object, Context
+- Resolution Flow
+  - Default resolution
+  - Resolver methods
+  - Resolver Classes
 
 +++
 @snap[north span-100 text-bottom]
@@ -330,6 +340,8 @@ Build schema with class
 - Connection edge fields like count
 - Relay Integration (Node Identification)
 
+---
+## Break
 
 ---
 ## Mutations

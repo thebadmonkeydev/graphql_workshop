@@ -163,7 +163,7 @@ Root level fields are defined in `app/graphql/types/query_type.rb`
 module Types
   class QueryType < Types::BaseObject
     field :numbers, [Integer], 'A list of ints', null: false
-    field :pi, Integer, 'Delicious!'
+    field :pi, Float, 'Delicious!'
 
     def numbers
       [ 1, 2, 5 ]
@@ -225,25 +225,10 @@ end
 ### Referencing Custom Types
 
 ```ruby
-# app/graphql/types/query_type.rb
-
-# ...
-
 field :school, SchoolType, 'The last school', null: false
 
 def school
   School.last
-end
-```
-
-+++
-### Defining Arguments
-
-Arguments for a field are defined within a block that's passed during field declaration:
-
-```ruby
-field :school, SchoolType, 'Query a specific school', null: true do
-  argument :id, ID, 'The unique identifier for a school', required: true
 end
 ```
 
@@ -344,6 +329,20 @@ Build schema with class
 - Type inference
 - Connection edge fields like count
 - Relay Integration (Node Identification)
+
+
+---
+## Mutations
+
+Mutations are a specialized form of field that is used to modify data behind the API.  In a REASTful sense this would encompass the usual POST, PUT, and UPDATE requests.
+
+---
+## Schema-level Customizations
+
+- Connection edge fields like count
+- Relay Integration (Node Identification)
+- Base Types
+- Base Classes
 
 ---
 ## Testing

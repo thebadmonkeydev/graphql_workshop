@@ -1,6 +1,5 @@
 published: true
 eager-load: true
-loop: true
 
 theme            : template
 theme-override   : assets/css/PITCHME.css

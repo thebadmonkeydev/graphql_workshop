@@ -129,9 +129,6 @@ Mutation are specialized fields that modify ("mutate") the state of our data. Th
 ```
 
 ---
-## Break
-
----
 ## Let's do it in Rails
 
 https://github.com/thebadmonkeydev/graphql_workshop
@@ -205,6 +202,10 @@ end
 ### Referencing Custom Types
 
 ```ruby
+# app/graphql/types/query_type.rb
+
+# ...
+
 field :school, SchoolType, 'The last school', null: false
 
 def school
@@ -214,6 +215,13 @@ end
 
 ---
 ## Field Resolution
+
+Where does graphql-ruby look to resolve fields?
+
+@box[bg-pink rounded](Method on type instance)
+@fa[chevron-right]
+@box[bg-pink rounded](Method on `object`)
+@box[bg-pink rounded](Hash Key on `object`)
 
 - Root object
 - Arguments, Parent Object, Context
@@ -237,6 +245,8 @@ A method with the same name as the field is looked up on the type definition, if
 
 Slightly more decoupled way of defining resolver behavior
 
+---
+## Break
 
 ---
 ## Mutations

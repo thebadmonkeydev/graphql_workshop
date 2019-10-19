@@ -4,12 +4,14 @@
 ## Who am I?
 
 +++
+@snap[centerpoint span-100 text-07]
 ### GraphQL Experience
 
 - **AssembledBrands (NY)** - Implemented a green-field production GraphQL API supporting a React client
 - **Stackshare (SF)** - Migrated from their existing REST API to GraphQL incrementally
 - Invited to speak at RailsConf Malaysia about implementing GraphQL in Rails
 - Author of the graphql-cache gem
+@snapend
 
 ---
 ## Topics

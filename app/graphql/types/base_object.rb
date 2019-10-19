@@ -4,7 +4,7 @@ module Types
 
     # Syntax sugar so we don't have to type `null: true` all the time
     #
-    # def field(*args, **kwargs, &block)
+    # def self.field(*args, **kwargs, &block)
     #   kwargs[:null] = true if kwargs[:null].nil? && kwargs[:mutation].nil?
     #   super
     # end

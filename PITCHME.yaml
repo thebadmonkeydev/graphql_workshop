@@ -14,5 +14,6 @@ theme-byline     : [ "Quicksand", "#D64292", "none" ]
 theme-text       : [ "Quicksand", "#ffffffdd", "none" ]
 
 theme-links      : [ "#5289F7", "#5254F7" ]
+#theme-code       : [ "Source Code Pro" ]
 theme-controls   : [ "#484848" ]
 theme-margins    : [ "0", "15px" ]

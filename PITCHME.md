@@ -216,7 +216,14 @@ end
 ---
 ## Field Resolution
 
-Where does graphql-ruby look to resolve fields?
+To resolve a field in GraphQL we need 3 pieces of information:
+
+- Field Arguments
+- Query Context
+- Parent Object to resolve on
+
++++
+### Where does graphql-ruby look?
 
 @snap[south-west span-25 font-06]
 @box[bg-pink box-padding rounded](Method on type)
@@ -227,23 +234,6 @@ Where does graphql-ruby look to resolve fields?
 @snap[south-east span-25 font-06]
 @box[bg-pink box-padding rounded](Hash Key on `object`)
 @snapend
-
-- Root object
-- Arguments, Parent Object, Context
-- Resolution Flow
-  - Default resolution
-  - Resolver methods
-  - Resolver Classes
-
-+++
-### Default Behavior
-
-The field's name is used to lookup a method by that name, or resolve a hash key with a value of the field's name
-
-+++
-### Resolver Methods
-
-A method with the same name as the field is looked up on the type definition, if it exists it is used to resolve the field
 
 +++
 ### Resolver Classes

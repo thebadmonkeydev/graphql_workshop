@@ -127,6 +127,9 @@ Mutation are specialized fields that modify ("mutate") the state of our data. Th
 ```
 
 ---
+## Break
+
+---
 ## Let's do it in Rails
 
 https://github.com/thebadmonkeydev/graphql_workshop
@@ -135,6 +138,10 @@ https://github.com/thebadmonkeydev/graphql_workshop
 - Setup instructions are in README.md
 - Once setup, run the server with `bin/run`
 - Navigate to http://localhost:3000/graphiql
+
+- Setup instructions are in README.md
+- Once setup, run the server with `bin/run`
+- Navigate to http://localhost:3000/graphiql in a web browser
 
 Note:
 
@@ -173,9 +180,6 @@ module Types
   end
 end
 ```
-Note:
-
-Take this opportunity to query the field in GraphiQL
 
 ```ruby
 module Types
@@ -335,9 +339,13 @@ Build schema with class
 ---
 ## Schema-level Customizations
 
-- Type inference
-- Connection edge fields like count
-- Relay Integration (Node Identification)
+```ruby
+# arguments defined for the field are passed as keyword arguments
+def school(first:)
+  object  # The parent object being resolved on
+  context # the Query context (acts like a hash)
+end
+```
 
 ---
 ## Break

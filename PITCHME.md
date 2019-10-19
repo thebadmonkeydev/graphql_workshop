@@ -80,7 +80,7 @@ Fields can take arguments as a means to specify certain resolution behavior.  On
 
 ```json
 {
-  "query": "query {
+  "query": "{
     scalar_field
     object_field {
       object_type_field

@@ -5,8 +5,8 @@ h4 {
   color: #D64292 !Important;
 }
 
-pre code {
-  padding: 5px;
+code.hljs {
+  padding: 15px;
 }
 
 .slide-background-content {

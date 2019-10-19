@@ -216,11 +216,11 @@ end
 ---
 ## Field Resolution
 
-To resolve a field in GraphQL we need 3 pieces of information:
+To resolve a field in GraphQL we need 3 things:
 
-- Field Arguments
-- Query Context
-- Parent Object to resolve on
+- Any arguments provided
+- The query Context
+- A parent object to resolve on
 
 +++
 @snap[north span-100]

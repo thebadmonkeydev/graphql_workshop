@@ -17,10 +17,8 @@
 ## Topics
 
 - GraphQL Concepts
-- Build a Rails API using graphql-ruby
-  - Schema Design
-  - Resolvers and testing
-  - Production Readiness and Deployment
+- How they manifest in Ruby
+- Design and implement a Rails GraphQL API
 
 ---
 ## GraphQL Concepts

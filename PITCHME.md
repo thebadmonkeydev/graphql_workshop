@@ -68,7 +68,7 @@ GraphQL is an API standard like JsonAPI or SOAP
 The fields defined in a GraphQL schema represent the data in our API and there are 2 types:
 @snapend
 
-@snap[east span-50]
+@snap[east span-50 text-07]
 **Scalar Types**
 - String
 - Integer

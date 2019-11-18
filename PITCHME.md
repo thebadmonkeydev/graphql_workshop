@@ -16,8 +16,8 @@ Lead Engineer at Calendly
 
 - **AssembledBrands (NY)** - Implemented a green-field production GraphQL API supporting a React client
 - **Stackshare (SF)** - Migrated from their existing REST API to GraphQL incrementally
-- Author/maintainer of the graphql-cache gem
-- Invited to speak at RailsConf Malaysia about implementing GraphQL in Rails
+- Author/Maintainer of the graphql-cache gem
+- Spoken on GraphQL with Rails both internally at Calendly and publicly through the Atlanta Ruby Meetup
 @snapend
 
 ---
@@ -38,8 +38,10 @@ A brief discussion of the core concepts in the GraphQL standard
 GraphQL is an API standard like JsonAPI or SOAP
 - Still technically "RESTful"
   - Every GraphQL request is a POST-ed query
-- Client-focused
-- Introspective
+- Features
+  - Client-focused
+  - Introspective
+  - Self Documenting
 
 +++
 ### Why Use GraphQL?

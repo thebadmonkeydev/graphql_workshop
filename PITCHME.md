@@ -271,11 +271,11 @@ end
 ---
 ## Mutations
 
-Mutations are a seperate entity in graphql-ruby and are defined by inheriting from `Types::MutationType`, defining arguments, result types, and a `resolve` method
+Mutations are a separate entity in graphql-ruby and are defined by inheriting from `Types::MutationType`, defining arguments, result types, and a `resolve` method
 
 Note:
 
-If you look deep in graphql-ruby you'll find that a Mutation is just a subclass of a Resolver class
+If you look deep in graphql-ruby you'll find that a Mutation is just a subclass of a parent `Resolver` class
 
 ---
 ## Break

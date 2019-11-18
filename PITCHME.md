@@ -9,7 +9,7 @@
 
 - **AssembledBrands (NY)** - Implemented a green-field production GraphQL API supporting a React client
 - **Stackshare (SF)** - Migrated from their existing REST API to GraphQL incrementally
-- Author of the graphql-cache gem
+- Author/maintainer of the graphql-cache gem
 - Invited to speak at RailsConf Malaysia about implementing GraphQL in Rails
 @snapend
 

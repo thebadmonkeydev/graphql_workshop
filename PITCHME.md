@@ -334,7 +334,7 @@ Authentication is usually handled at the controller level through either a token
 ## Advanced Topics
 
 - Schema Stitching
-- SSR
+- Server Side Rendering (SSR)
 
 ---
 ## Fin

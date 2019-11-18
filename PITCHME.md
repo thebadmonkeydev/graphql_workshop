@@ -296,7 +296,10 @@ If you look deep in graphql-ruby you'll find that a Mutation is just a subclass 
 
 - Best practices
   - Integration/Feature specs
+      - Mutations
+      - Critical Paths
   - Resolver Unit tests
+  - Type structure
 - Examples of using the graphql-ruby lib API to test directly
 
 ---

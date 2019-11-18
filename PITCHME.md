@@ -5,6 +5,13 @@
 
 +++
 @snap[centerpoint span-100 text-07]
+### Michael Kelly
+Lead Engineer at Calendly
+
+@snapend
+
++++
+@snap[centerpoint span-100 text-07]
 ### GraphQL Experience
 
 - **AssembledBrands (NY)** - Implemented a green-field production GraphQL API supporting a React client

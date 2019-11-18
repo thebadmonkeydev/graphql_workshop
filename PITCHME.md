@@ -327,11 +327,6 @@ Authentication is usually handled at the controller level through either a token
 - Manually
 - or with `graphql-cache`
 
-+++
-### Query Parsing
-
-By default this is done in Ruby. `libgraphqlparser` is a C implementation of the query parser that can be used by graphql-ruby.  It is significantly faster at parsing queries than the built-in ruby parser.
-
 ---
 ## Advanced Topics
 

@@ -8,5 +8,9 @@ module Types
     #   kwargs[:null] = true if kwargs[:null].nil? && kwargs[:mutation].nil?
     #   super
     # end
+    def self.field(*args, **kwargs, &block)
+      kwargs[:null] = true if kwargs[:null].nil? && kwargs[:mutation].nil?
+      super
+    end
   end
 end

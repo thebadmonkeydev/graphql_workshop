@@ -35,8 +35,7 @@ A brief discussion of the core concepts in the GraphQL standard
 ### What is it?
 
 GraphQL is an API standard like JsonAPI or SOAP
-- Still technically "RESTful"
-  - Every GraphQL request is a POST-ed query
+- Models APIs like a directed graph
 - Features
   - Client-focused
   - Introspective

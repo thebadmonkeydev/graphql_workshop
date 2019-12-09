@@ -14,8 +14,8 @@ Lead Engineer at Calendly
 @snap[centerpoint span-100 text-07]
 ### GraphQL Experience
 
-- **AssembledBrands (NY)** - Implemented a green-field production GraphQL API supporting a React client
-- **Stackshare (SF)** - Migrated from their existing REST API to GraphQL incrementally
+- AssembledBrands (NY) - Implemented a green-field production GraphQL API supporting a custom React client
+- Stackshare (SF) - Migrated from their existing REST API to GraphQL incrementally (w/ React)
 - Author/Maintainer of the graphql-cache gem
 - Spoken on GraphQL with Rails both internally at Calendly and publicly through the Atlanta Ruby Meetup
 @snapend
@@ -25,7 +25,6 @@ Lead Engineer at Calendly
 
 - GraphQL Concepts
 - How they manifest in Ruby
-- Design and implement a Rails GraphQL API
 
 ---
 ## GraphQL Concepts
@@ -59,7 +58,8 @@ GraphQL is an API standard like JsonAPI or SOAP
 
 - GraphQL is a complex tool, sometimes you need a piece of sandpaper, not a milling machine
 - Switching cost can be large for complex data graphs
-- Wide-spread client support isn't all there yet
+- Wide-spread external client support isn't all there yet
+    - Internal API tooling is though :)
 
 +++
 ### Schema
